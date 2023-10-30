@@ -1,6 +1,6 @@
 @font-face {
-    font-family:Spider;
-    src: url(/assets/fonts/SpiderGhostDEMO.ttf);
+    font-family:play;
+    src: url(/assets/fonts/PlaypenSans-VariableFont_wght.ttf);
 }
 
 @font-face {
@@ -15,8 +15,8 @@ body{
 
 
 h1{
-    font-family: Spider;
-    font-size: 80px;
+    font-family: play;
+    font-size: 40px;
 }
 
 #container {
