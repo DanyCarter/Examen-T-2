@@ -1,6 +1,6 @@
 window.addEventListener("load", iniciarSesion);
 
-const PIN_Correcto = "1234";
+let PIN_Correcto = "1234";
 let saldo = 1000;
 let intentos = 3;
 
@@ -24,23 +24,6 @@ function saldoActualizadoTemplate(){
     saldoTemplate.innerText = `${saldo}`
 }
 
-//Funcion para Iniciar sesion
-/* function iniciarSesion(){
-    let PIN = parseFloat(prompt("Introduzca el PIN: "));
-    while(PIN_Correcto !== PIN && intentos > 1){
-        intentos--;
-        alert(`El pin que has introducido es invalido, le quedan ${intentos} intentos, introduzca de nuevo el PIN`);
-        return;
-    }
-
-    if(PIN_Correcto === PIN){
-        alert("El PIN que has introducido es valido");
-        saldoActualizadoTemplate();
-    }else {
-        alert("PIN incorrecto, has agotado todos los intentos.");
-        window.location.replace("");
-    }
-} */
 
 //Funcion para iniciar sesion.
 function iniciarSesion(){
@@ -49,8 +32,9 @@ function iniciarSesion(){
     while(PIN_Correcto !== PIN && intentos > 1){
         intentos--;
         alert(`Pin incorrecto, le quedan ${intentos} intentos`);
+        
         prompt("Introduzca de nuevo el PIN: ")
-        return;       
+  
     }
 
     if(PIN === PIN_Correcto){
@@ -60,10 +44,7 @@ function iniciarSesion(){
         alert("PIN incorrecto, has agotado todos los intentos...")
         window.location.replace("/templates/bankBan.html");
     }
-
 }
-
-
 
 
 
@@ -98,9 +79,9 @@ function retirar(){
     }
 }
 //Funcion para validar IBAN
- function validarIBAN(IBAN){
+ function validarIBAN(iban){
 let expresionRegular=/^(ES\d{22})$/;
-expresionRegular.test(IBAN);
+return expresionRegular.test(iban);
 }
  
 
@@ -112,8 +93,9 @@ function transferir(){
         alert("La cantidad que has introducuido es invalida, introduce una nueva")
     } else {
         const numeroCuenta = prompt("Introduzca un numero de cuenta:");
-        if(!validarIBAN(IBAN) == numeroCuenta ){
+        if(!validarIBAN(numeroCuenta)){
             alert("El numero de cuenta que has introducido no es valido, introduzca uno nuevo:")
+            numeroCuenta = prompt("Introduzca un numero de cuenta valido");
             return;
         } else {
             alert(`Has transferido ${transferido}€`)
@@ -123,6 +105,32 @@ function transferir(){
 
     }
 }
+
+// FUNCION para cambiar contraseña
+ function cambiarContra(){
+    let seguro = prompt("Introduzca el PIN");
+    if(seguro === PIN_Correcto){
+        alert("PIN correcto, puedes cambiar tu PIN");
+        let PIN_Correcto = prompt("Introduzca el nuevo PIN");
+    }else {
+        alert("PIN incorrecto...")
+    }
+
+} 
+/* 
+function cambiarContra(){
+    const seguro = prompt("Introduzca el PIN");
+    if(seguro !== PIN){
+        alert("PIN incorrecto...")
+        seguro = prompt("Introduzca denuevo el PIN")
+    } else {
+        alert("PIN correcto, puedes cambiar tu PIN");
+        PIN_Correcto = prompt("Introduzca el nuevo PIN");
+    }
+}
+ */
+
+
 
 //Funcion para salir
 function salir(){
