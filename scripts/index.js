@@ -4,6 +4,7 @@ let PIN_Correcto = "1234";
 let saldo = 1000;
 let intentos = 3;
 
+//Enlazamos con los IDs
 const depositarBtn = document.getElementById("depositar");
 const retirarBtn = document.getElementById("retirar");
 const transferirBtn = document.getElementById("transferir");
@@ -11,6 +12,7 @@ const cambiarContraBtn = document.getElementById("cambiarContra");
 const salirBtn = document.getElementById("salir");
 const saldoTemplate = document.getElementById("result");
 
+//Creamos manejadores de eventos para que cuando se le de click al boton se haga la funcion
 depositarBtn.addEventListener("click",depositar);
 retirarBtn.addEventListener("click", retirar);
 transferirBtn.addEventListener("click", transferir);
