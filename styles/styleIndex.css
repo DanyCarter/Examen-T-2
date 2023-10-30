@@ -19,7 +19,7 @@ h1{
     background-color: rgb(91, 91, 184);
     width: 500px;
   /*   background : radial-gradient(circle, rgb(from color violet  purple blueviolet)); */
-    box-shadow: 5px 5 px 5 px 5 px;
+    box-shadow: 5 5 0 0;
     margin: 0 auto;
  
 }
