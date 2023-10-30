@@ -16,7 +16,7 @@ transferirBtn.addEventListener("click", transferir);
 cambiarContraBtn.addEventListener("click", cambiarContra);
 salirBtn.addEventListener("click",salir);
 
-//  Funciones:
+//  Funciones :
 
 //Funcion para actualizar saldo
 function saldoActualizadoTemplate(){
@@ -39,7 +39,7 @@ function iniciarSesion(){
     }
 }
 
-// Funcion para depositar
+// Funcion para depositar.
 function depositar(){
     const depositado = parseFloat(prompt("Inserte la cantidad que desesa depositar:"))
 
